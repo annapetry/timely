@@ -5,4 +5,12 @@ class Account < ActiveRecord::Base
                    length: { in: 1..70,
                    message: "Please use a decent name." },
                    uniqueness: true
+                   
+  validate :your_name_is_not_dumb
+  
+  def your_name_is_not_dumb
+    if name.include?("dumb")
+      errors.add(:name, "is dumb")
+    end
+  end
 end
