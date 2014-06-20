@@ -13,6 +13,7 @@
 
 <% @employee.time_entries.each do |entry| %>
   <div class="entry">
+		<strong><%= entry.state %></strong>
     <%= entry.time %>
     <%= entry.account.name %>
     <%= entry.created_at %>
