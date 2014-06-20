@@ -1,4 +1,6 @@
 class AccountEntry < ActiveRecord::Base
+  has_paper_trail
+  
   belongs_to :account
   
   validates :account_id, presence: true 
