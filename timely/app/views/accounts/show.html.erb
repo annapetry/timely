@@ -1,7 +1,7 @@
 <h1><%= @account.name %></h1>
 
 Total Hours: <%= @account.account_entries.sum(:time) %>
-Total Cost: $<%= (@account.account_entries.map &:cost).sum %>
+Total Cost: $<%= (@account.account_entries.map(&:amount)).sum %>
 
 <h4>Account Entries</h4>
 
